@@ -1,0 +1,108 @@
+/* Global Theme Variables */
+:root {
+    --bg-dark: #0f111a;
+    --bg-card: rgba(30, 34, 51, 0.7);
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --accent-purple: #8b5cf6;
+    --accent-blue: #3b82f6;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+}
+
+/* Background gradient for the whole app */
+.stApp {
+    background: radial-gradient(circle at top left, #1a1c2e, #0f111a);
+    color: var(--text-primary);
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* Sidebar styling */
+[data-testid="stSidebar"] {
+    background-color: rgba(15, 17, 26, 0.95) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Custom Cards */
+.custom-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
+}
+
+/* Metric highlight */
+.metric-value {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+/* Skill badges */
+.skill-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 4px;
+    border-radius: 20px;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: #c4b5fd;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.skill-badge:hover {
+    background: rgba(139, 92, 246, 0.2);
+    transform: scale(1.05);
+}
+
+.skill-badge.missing {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+}
+
+/* Custom headers */
+h1, h2, h3 {
+    font-weight: 700 !important;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    background: linear-gradient(to right, #fff, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Hide Streamlit branding */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+/* Custom Upload box styling override */
+[data-testid="stFileUploader"] {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 2px dashed rgba(139, 92, 246, 0.4);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+[data-testid="stFileUploader"]:hover {
+    border-color: var(--accent-purple);
+    background: rgba(30, 34, 51, 0.9);
+}
